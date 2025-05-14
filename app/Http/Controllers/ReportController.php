@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\AllTickets;
+use App\Exports\AgentTickets;
+use App\Exports\StatusTickets;
+use App\Exports\CustomerTickets;
+use App\Exports\PaymentReport; 
 
 use App\Models\Ticket;
 use App\Models\User;
@@ -194,7 +201,7 @@ public function viewTicketStatusReport(Request $request)
 				return $query->where('tickets.status','=',$status);
 			})
 			->when($request->agent_id, function ($query, $agent_id) {
-				return $query->where('agent_tickets.agent_id','>=',$agent_id);
+				return $query->where('agent_ticket.agent_id','>=',$agent_id);
 			})
 			
 			->when($request->start_date, function ($query, $sdate) {
@@ -323,11 +330,49 @@ public function viewPaymentsDetails(Request $request)
     }
 
 
+//EXPORT REPORTS --------------------------------------------------------------
+
+	/*public function export_all_tickets($sdate, $edate)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new AllTickets($sdate, $edate), 'all_tickets'.'_'.date('Y-m-d').'.'.'xlsx');
+    }*/
+	
+
+	public function export_all_tickets($sdate,$edate)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new AllTickets($sdate, $edate), 'all_tickets'.'_'.date('Y-m-d').'.'.'xlsx');
+    }
 
 
+	public function export_agent_tickets($sdate,$edate,$agent)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new AgentTickets($sdate, $edate,$agent), 'agent_tickets'.'_'.date('Y-m-d').'.'.'xlsx');
+    }
 
 
-
+	public function export_status_report($sdate,$edate,$status,$agent)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new StatusTickets($sdate,$edate,$status,$agent), 'tickets_status'.'_'.date('Y-m-d').'.'.'xlsx');
+    }
+	
+	
+	public function export_customer_tickets($sdate,$edate,$customer)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new CustomerTickets($sdate,$edate,$customer), 'customer_tickets'.'_'.date('Y-m-d').'.'.'xlsx');
+    }
+	
+	
+	public function export_payment_report($sdate,$edate,$month,$pmode,$year)
+	{
+		 //return Excel::download($export, 'test.xlsx');
+        return Excel::download(new PaymentReport($sdate,$edate,$month,$pmode,$year), 'payments'.'_'.date('Y-m-d').'.'.'xlsx');
+    }
+	
 
     /*public function countReport(Request $request)
     {  

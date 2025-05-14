@@ -11,7 +11,6 @@
 
             <!-- App favicon -->
             <link rel="shortcut icon" href="assets/images/favicon.ico">
-
        
      <!-- App css -->
      <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -27,17 +26,17 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4 mx-auto">
-                            <div class="card">
-                                <div class="card-body p-0 auth-header-box">
+                            <div class="card" style="box-shadow: 1px 1px 1px 2px lightblue; padding:10px;">
+                                <div class="card-body p-3 ">
                                     <div class="text-center p-3">
                                         <a href="index.html" class="logo logo-admin">
-                                            <img src="{{url('assets/images/logo-sm.png')}}" height="50" alt="logo" class="auth-logo">
+                                            <img src="{{url('images/gl-logo.svg')}}" height="50" alt="logo" class="auth-logo">
                                         </a>
-                                        <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started Metrica</h4>   
-                                        <p class="text-muted  mb-0">Sign in to continue to Metrica.</p>  
+                                        <h4 class="mt-3 mb-1 fw-semibold  font-18">Let's Get Gl-Tickets</h4>   
+                                        <p class="text-muted  mb-0">Sign in to continue..</p>  
                                     </div>
                                 </div>
-                                <div class="card-body pt-0">                                    
+                                <div class="card-body pt-0 mb-5" style="padding:25px;">                                    
                                     <form class="form" method="post"  action="{{route('user-login')}}"  name="loginForm">
 									@csrf									
                                         <div class="form-group mt-3 mb-2">
@@ -52,7 +51,7 @@
             
                                         <div class="form-group row mt-3">
                                             <div class="col-sm-12 text-end">
-                                                <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>                                    
+                                                <!--<a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>  -->
                                             </div><!--end col--> 
                                         </div><!--end form-group--> 
             

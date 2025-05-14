@@ -176,6 +176,19 @@ Route::controller(ReportController::class)->group(function(){
 	Route::get('payment-report','paymentsReport')->name('payment-report');
 	Route::get('view-payments-report','viewPaymentsDetails')->name('view-payments-report');
 	
+	
+	//Reports
+	
+	Route::get('/export-all-tickets/{sdat}/{edat}', 'export_all_tickets')->name('export-all-tickets');
+	Route::get('/export-agent-tickets/{sdat}/{edat}/{agent}', 'export_agent_tickets')->name('export-agent-tickets');
+	Route::get('/export-status-report/{sdat}/{edat}/{status}/{agent}', 'export_status_report')->name('export-status-report');
+	Route::get('/export-customer-tickets/{sdat}/{edat}/{cust_id}', 'export_customer_tickets')->name('export-customer-tickets');
+	Route::get('/export-payment-report/{sdat}/{edat}/{month}/{pmode}/{year}', 'export_payment_report')->name('export-payment-report');
+		
+	
+	//Route::get('/get-course-by-center-id/{id}', 'get_course_by_center_id')->name('get-course-by-center-id');
+	
+	
 	/*Route::get('category','productCategory')->name('category');
 	Route::get('view-brands','viewBrands')->name('view-brands');
 	

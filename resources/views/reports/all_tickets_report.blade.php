@@ -62,14 +62,13 @@
 
 									<div class="col-2 col-lg-2 col-xl-2">
 										<button type="button" class="btn btn-primary btn-pad btn-filter"><i class="fas fa-filter"></i> Filter </button>&nbsp;&nbsp;&nbsp;
-										<!--<button type="submit" id="btn_flt_clear" class="btn btn-secondary btn-pad"><i class="fas fa-clean"></i> Clear </button>-->
 									</div>
 									</div>
 
 								</div><!--end col-->  
 
-							<div class="col-6 text-end">                      
-								
+							<div class="col-5 text-end">                      
+								<a href="javascript:void(0);" class="btn btn-info btn-pad" id="export_to_excel"><i class="fa fa-plus"></i>&nbsp;Export To Excel</a>
 							</div><!--end col-->  
 
 							
@@ -140,6 +139,7 @@ endElem.addEventListener('changeDate', function(e) {
   $("#flt_end_date").val(document.getElementById('end_date').value);
 });
 
+
 var table = $('#datatable1').DataTable({
         processing: true,
         serverSide: true,
@@ -181,6 +181,23 @@ $(document).on('click','.btn-filter',function()
 
 
 
+$("#export_to_excel").click(function()
+{
+	var sdat=$("#flt_start_date").val();
+	var edat=$("#flt_end_date").val();
+	if(sdat!="" && edat!="")
+	{
+		var lnk="{{url('export-all-tickets')}}"+"/"+sdat+"/"+edat;
+	    $("#export_to_excel").attr('href',lnk);	
+	}
+	else
+	{
+		sdat='0';
+		edat='0';
+		var lnk="{{url('export-all-tickets')}}"+"/"+sdat+"/"+edat;
+	    $("#export_to_excel").attr('href',lnk);
+	}
+});
 
 
 </script>

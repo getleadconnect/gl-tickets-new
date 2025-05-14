@@ -86,8 +86,8 @@
 
 								</div><!--end col-->  
 
-							<div class="col-6 text-end">                      
-								
+							<div class="col-5 text-end">                      
+								<a href="javascript:void(0);" class="btn btn-info btn-pad" id="export_to_excel"><i class="fa fa-plus"></i>&nbsp;Export To Excel</a>
 							</div><!--end col-->  
 
 							
@@ -201,7 +201,17 @@ $(document).on('click','.btn-filter',function()
 });
 
 
-
+$("#export_to_excel").click(function()
+{
+	var sdat=($("#flt_start_date").val())?$("#flt_start_date").val():0;
+	var edat=($("#flt_end_date").val())?$("#flt_end_date").val():0;
+	var agent=($("#flt_agent_id").val())?$("#flt_agent_id").val():0;
+	var status=($("#flt_status").val())?$("#flt_status").val():0;
+	var lnk="{{url('export-status-report/:sdate/:edate/:status/:agent')}}";
+	var link=lnk.replace(":sdate",sdat).replace(":edate",edat).replace(":status",status).replace(":agent",agent);
+	$("#export_to_excel").attr('href',link);	
+	
+});
 
 
 </script>

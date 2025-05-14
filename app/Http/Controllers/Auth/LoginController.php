@@ -43,7 +43,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'admin/dashboard';
+    protected $redirectTo = 'dashboard';
 
     /**
      * Create a new controller instance.
@@ -105,7 +105,7 @@ class LoginController extends Controller
 					
 					if ($user->role_id == Variables::ADMIN) 
 					{
-						return redirect('list-tickets');
+						return redirect('dashboard');
 					}
 					else if($user->role_id == Variables::AGET)
 					{

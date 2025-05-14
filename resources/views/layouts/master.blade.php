@@ -3,14 +3,14 @@
     <head>
 
         <meta charset="utf-8" />
-                <title>Metrica - Admin & Dashboard Template</title>
+                <title>Gl-Tickets - Admin Dashboard</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
                 <meta content="" name="author" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
                 <!-- App favicon -->
-                <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">
+                <link rel="shortcut icon" href="{{url('assets/favicon/favicon.ico')}}">
 
          <!-- App css -->
          <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -154,7 +154,7 @@
                         <a class="nav-link dropdown-toggle nav-user" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
                             <div class="d-flex align-items-center">
-                                <img src="{{url('assets/images/users/user-4.jpg')}}" alt="profile-user" class="rounded-circle me-2 thumb-sm" />
+                                <img src="{{url('assets/images/users/user-vector.png')}}" alt="profile-user" class="rounded-circle me-2 thumb-sm" />
                                 <div>
                                     <small class="d-none d-md-block font-11">
 									
@@ -172,8 +172,8 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="#"><i class="ti ti-user font-16 me-1 align-text-bottom"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Settings</a>
+                            <a class="dropdown-item" href="{{url('profile')}}"><i class="ti ti-user font-16 me-1 align-text-bottom"></i> Profile</a>
+                            <a class="dropdown-item" href="{{url('profile')}}"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Change Password</a>
                             <div class="dropdown-divider mb-0"></div>
 							
                             <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form2').submit();">
@@ -406,11 +406,10 @@
                 <!--Start Footer-->
                 <!-- Footer Start -->
                 <footer class="footer text-center text-sm-start">
-                    &copy; <script>
-                        document.write(new Date().getFullYear())
-                    </script> Metrica <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i
-                            class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
-                </footer>
+                &copy; <script>
+                    document.write(new Date().getFullYear())
+                </script> Getlead <span class="text-muted d-none d-sm-inline-block float-end">Prowered <i class="mdi mdi-heart text-danger"></i> by Getlead</span>
+            </footer>
                 <!-- end Footer -->                
                 <!--end footer-->
             </div>

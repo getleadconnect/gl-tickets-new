@@ -111,7 +111,7 @@
 
 							<div class="col-3 text-end" id="export-buttons" >                      
 								
-								
+								<a href="javascript:void(0);" class="btn btn-info btn-pad" id="export_to_excel"><i class="fa fa-plus"></i>&nbsp;Export To Excel</a>
 							</div><!--end col-->  
 
 							
@@ -260,8 +260,7 @@ var table = $('#datatable1').DataTable({
 });
 
 
-
-var buttons = new $.fn.dataTable.Buttons(table, {
+/*var buttons = new $.fn.dataTable.Buttons(table, {
 		buttons: [
             {
                 extend: 'excelHtml5',
@@ -279,7 +278,7 @@ var buttons = new $.fn.dataTable.Buttons(table, {
 			
 	}).container().appendTo($('#export-buttons'));
 
-
+*/
 
 $(document).on('click','.btn-filter',function()
 {
@@ -287,7 +286,25 @@ $(document).on('click','.btn-filter',function()
 });
 
 
+$("#export_to_excel").click(function()
+{
+	var sdat=($("#flt_start_date").val())?$("#flt_start_date").val():0;
+	var edat=($("#flt_end_date").val())?$("#flt_end_date").val():0;
+	var mon=($("#flt_month_id").val())?$("#flt_month_id").val():0;
+	var pmode=($("#flt_pay_mode").val())?$("#flt_pay_mode").val():0;
+	var year=($("#flt_year").val())?$("#flt_year").val():0;
+	var lnk="{{url('export-payment-report/:sdate/:edate/:month/:pmode/:year')}}";
+	var link=lnk.replace(":sdate",sdat).replace(":edate",edat).replace(":month",mon).replace(":pmode",pmode).replace(":year",year);
+	if(year!="")
+	{
+		$("#export_to_excel").attr('href',link);	
+	}
+	else
+	{
+		toastr.error("Please specify year.!");
+	}
 
+});
 
 
 </script>
