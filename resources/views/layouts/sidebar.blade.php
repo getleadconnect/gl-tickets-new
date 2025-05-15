@@ -46,7 +46,7 @@
 							
 							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Products" data-bs-trigger="hover">
                                 <a href="#MenuProduct" id="invoice-tab" class="nav-link">
-                                    <i class="fas fa-box font-25 menu-icon"></i>
+                                    <i class="fas fa-box-open font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 
