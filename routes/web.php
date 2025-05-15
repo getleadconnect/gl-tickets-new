@@ -218,7 +218,7 @@ Route::controller(InvoiceController::class)->group(function(){
 	
 	Route::get('payments','payments')->name('payments');
 	Route::get('view-payments','viewPayments')->name('view-payments');
-	
+});
 	
 }); 
 
