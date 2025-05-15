@@ -343,11 +343,11 @@ return $addi_fields;
 		if($request->new_customer_tab=="modal")
 		{
 			$validator = Validator::make($request->all(), [
-				'customer_name' => 'required',
+				'tkt_customer_name' => 'required',
 				'tkt_country_code' => 'required',
 				'tkt_contact_number' => 'required',
-				'email' => 'required',
-				'company_name' => 'required',
+				'tkt_email' => 'required',
+				'tkt_company_name' => 'required',
 			]);
 		}
 		else

@@ -52,9 +52,7 @@ Route::controller(TicketController::class)->group(function(){
 		
 	Route::get('add-new-ticket/{id}','addNewTicket')->name('add-new-ticket');
 	Route::post('save-new-ticket','store')->name('save-new-ticket');
-	
-    Route::post('create-customer','createCustomer')->name('create-customer');
-	
+
 	Route::post('change-priority-status','changeTicketPriority')->name('change-priority-status');
 	Route::post('change-ticket-status','changeTicketStatus')->name('change-ticket-status');
 	Route::post('assign-ticket-agents','assignTicketAgents')->name('assign-ticket-agents');
@@ -173,11 +171,8 @@ Route::controller(CustomersController::class)->group(function(){
 	Route::get('view-customers','viewCustomers')->name('view-customers');
 	Route::get('customer-details/{id}','getCustomerDetails')->name('customer-details');
 	
-	//Route::post('save-additional-field','saveAdditionalField')->name('save-additional-field');
+	Route::post('create-customer','createCustomer')->name('create-customer');
 	
-	//Route::get('edit-additional-field/{id}','edit')->name('edit-additional-field');	
-	//Route::post('update-additional-field','updateAdditionalField')->name('update-additional-field');
-	//Route::get('delete-additional-field/{id}','destroy')->name('delete-additional-field');		
 });
 
 
@@ -201,7 +196,6 @@ Route::controller(ReportController::class)->group(function(){
 	Route::get('payment-report','paymentsReport')->name('payment-report');
 	Route::get('view-payments-report','viewPaymentsDetails')->name('view-payments-report');
 	
-	
 	//Reports
 	
 	Route::get('/export-all-tickets/{sdat}/{edat}', 'export_all_tickets')->name('export-all-tickets');
@@ -209,21 +203,7 @@ Route::controller(ReportController::class)->group(function(){
 	Route::get('/export-status-report/{sdat}/{edat}/{status}/{agent}', 'export_status_report')->name('export-status-report');
 	Route::get('/export-customer-tickets/{sdat}/{edat}/{cust_id}', 'export_customer_tickets')->name('export-customer-tickets');
 	Route::get('/export-payment-report/{sdat}/{edat}/{month}/{pmode}/{year}', 'export_payment_report')->name('export-payment-report');
-		
 	
-	//Route::get('/get-course-by-center-id/{id}', 'get_course_by_center_id')->name('get-course-by-center-id');
-	
-	
-	/*Route::get('category','productCategory')->name('category');
-	Route::get('view-brands','viewBrands')->name('view-brands');
-	
-	
-	Route::post('save-brand','saveBrand')->name('save-brand');
-	Route::post('save-category','saveCategory')->name('save-category');
-	
-	Route::get('delete-brand/{id}','deleteBrand')->name('delete-brand');
-	Route::get('delete-category/{id}','deleteCategory')->name('delete-category');
-	*/
 }); 
 
 
@@ -239,17 +219,6 @@ Route::controller(InvoiceController::class)->group(function(){
 	Route::get('payments','payments')->name('payments');
 	Route::get('view-payments','viewPayments')->name('view-payments');
 	
-	//Route::get('agent-wise-report','agentWiseReport')->name('agent-wise-report');
-	//Route::get('view-agent-tickets-report','viewAgentTickets')->name('view-agent-tickets-report');
-	
-	//Route::get('ticket-status-report','ticketStatusWiseReport')->name('ticket-status-report');
-	//Route::get('view-ticket-status-report','viewTicketStatusReport')->name('view-ticket-status-report');
-	
-	//Route::get('customer-tickets','customerTicketsReport')->name('customer-tickets');
-	//Route::get('view-customer-tickets-report','viewCustomerTicketsReport')->name('view-customer-tickets-report');
-	
-	//Route::get('all-tickets','allTicketsReport')->name('all-tickets');
-	//Route::get('view-all-tickets-report','viewAllTicketsReport')->name('view-all-tickets-report');
 	
 }); 
 

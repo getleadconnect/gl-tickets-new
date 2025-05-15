@@ -497,6 +497,7 @@ $(document).on('click',"#btn_new_product",function()
 			//data: {vid: vid},
 			success: function(res)
 			{
+
 			   Result.html(res);
 			}
 		});	
