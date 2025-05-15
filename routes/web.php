@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CommonController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\AccountSettingsController;
@@ -10,7 +11,7 @@ use App\Http\Controllers\TicketLabelsController;
 use App\Http\Controllers\TicketStatusController;
 use App\Http\Controllers\TicketAdditionalFieldsController;
 use App\Http\Controllers\CustomersController;
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSettingsController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\InvoiceController;
@@ -26,9 +27,18 @@ Route::controller(LoginController::class)->group(function() {
 	Route::post('/logout', 'logout')->name('logout');
 });
 
+
+Route::group(['middleware' => 'authware'], function()
+{
+
 Route::controller(DashboardController::class)->group(function() {
 	Route::get('dashboard', 'index')->name('dashboard');
 });
+
+Route::controller(CommonController::class)->group(function() {
+	Route::get('get-categories/{id}', 'getCategories')->name('get-categories');
+});
+
 
 
 Route::controller(TicketController::class)->group(function(){
@@ -116,6 +126,21 @@ Route::controller(ProductSettingsController::class)->group(function(){
 	
 	Route::get('delete-brand/{id}','deleteBrand')->name('delete-brand');
 	Route::get('delete-category/{id}','deleteCategory')->name('delete-category');
+
+}); 
+
+
+Route::controller(ProductController::class)->group(function(){
+	
+    Route::get('list-products','index')->name('list-products');
+	Route::get('add-product','addProduct')->name('add-product');
+	Route::post('save-product','store')->name('save-product');
+	Route::get('view-products','viewProducts')->name('view-products');
+	
+	Route::get('edit-product/{id}','edit')->name('edit-product');
+	Route::post('update-product','updateProduct')->name('update-product');
+	Route::get('delete-product/{id}','deleteProduct')->name('delete-product');
+	
 }); 
 
 Route::controller(TicketLabelsController::class)->group(function(){
@@ -475,3 +500,6 @@ Route::domain(env('SHORT_LINK_DOMAIN'))->group(function () {
 });
 
 */
+
+
+});

@@ -25,6 +25,11 @@ use DataTables;
 class CustomersController extends Controller
 {
 	
+	public function __construct()
+	{
+		// code here
+	}
+	
 	public function index(Request $request)
 	{
 		$user_id=User::getVendorId();

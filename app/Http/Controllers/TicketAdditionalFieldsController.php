@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 
 use App\Models\Ticket;
@@ -24,7 +24,12 @@ use DataTables;
 
 class TicketAdditionalFieldsController extends Controller
 {
-		
+	
+	public function __construct()
+	{
+		// code here
+	}
+	
 	public function index(Request $request)
 	{
 		$user_id=User::getVendorId();

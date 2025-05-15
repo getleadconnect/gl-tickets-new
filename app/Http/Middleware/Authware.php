@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use Auth;
 
 class Authware
@@ -16,11 +17,12 @@ class Authware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check())
+        
+		if (!Auth::check())
             return redirect('login');
 		
         $user = Auth::user();
-        if ($user->isAdmin() || $user->isUser() || $user->isShops()){
+        if ($user->isAdmin() || $user->isAgent() || $user->isManager()){
 		
 			return $next($request);
         }
@@ -28,5 +30,7 @@ class Authware
 		{
 			return redirect('login');
 		}
+		
+		return $next($request);
     }
 }

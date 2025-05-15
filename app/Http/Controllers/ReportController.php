@@ -45,7 +45,7 @@ class ReportController extends Controller
 	
 	public function __construct()
 	{
-		
+		//code here
 	}
 	
 	public function index()

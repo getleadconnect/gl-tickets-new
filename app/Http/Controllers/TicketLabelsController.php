@@ -22,7 +22,12 @@ use DataTables;
 
 class TicketLabelsController extends Controller
 {
-		
+
+	public function __construct()
+	{
+		// code here
+	}
+	
 	public function index(Request $request)
 	{
 		$user_id=User::getVendorId();

@@ -60,8 +60,8 @@
 						<button type="button" style="float:right;" class="btn btn-primary dropdown-toggle show btn-pad" data-bs-toggle="dropdown" aria-expanded="true">Add&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
                         <div class="dropdown-menu" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(16px, 112px);">
 							<a class="dropdown-item " href="javascript:;" id="btn_new_ticket"  data-bs-toggle="offcanvas" data-bs-target="#new-ticket"   > <i class="fa fa-file-alt"></i>&nbsp;&nbsp;Ticket</a>
-							<a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#new-customer" ><i class="fa fa-user"></i>&nbsp;&nbsp;Customer</a>
-							<a class="dropdown-item" href="javascript:;"data-bs-toggle="offcanvas" data-bs-target="#new-product" ><i class="fa fa-file-alt"></i>&nbsp;&nbsp;Product</a>
+							<a class="dropdown-item" href="javascript:;" id="btn_new_customer" data-bs-toggle="offcanvas" data-bs-target="#new-customer" ><i class="fa fa-user"></i>&nbsp;&nbsp;Customer</a>
+							<a class="dropdown-item" href="javascript:;" id="btn_new_product" data-bs-toggle="offcanvas" data-bs-target="#new-product" ><i class="fa fa-file-alt"></i>&nbsp;&nbsp;Product</a>
 						</div>
                     </li><!--end topbar-language-->
 
@@ -176,8 +176,8 @@
                             <a class="dropdown-item" href="{{url('profile')}}"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Change Password</a>
                             <div class="dropdown-divider mb-0"></div>
 							
-                            <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form2').submit();">
-							<i class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form2').submit();" >
+							<i class="ti ti-power font-16 me-1 align-text-bottom" style="color:red;"></i> Logout</a>
 						
 						    <form id="logout-form2" action="{{url('logout')}}" method="post" class="d-none">
 								@csrf
@@ -213,13 +213,7 @@
         <!-- Top Bar End -->
 		
 		@php
-		
-		$customer=\App\Models\Customer::orderBy('id','ASC')->get();
-		$tk_status=\App\Models\TicketStatus::orderBy('id','ASC')->get();
-		$priority=\App\Models\Priority::orderBy('id','ASC')->get();
-		$users=\App\Models\User::orderBy('id','ASC')->get();
-		$tlabel=\App\Models\TicketLabel::orderBy('id','ASC')->get();
-		
+			$brand=\App\Models\Brand::orderBy('id','ASC')->get();	
 		@endphp
 		<div class="page-wrapper">
             <!-- Page Content-->
@@ -298,58 +292,7 @@
                       <button type="button" class="btn-offcanvas-close text-reset p-0 m-0 align-self-center" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">  
-					
-					<form>
-					
-						<div class="mb-3">
-							<label for="product_name">Product Name</label>
-							<input type="text" class="form-control" id="product_name"  placeholder="Product Name">
-						</div>
-						<div class="mb-3">
-							<label for="price">Price</label>
-							<input type="number" class="form-control" id="price" placeholder="Price">
-						</div>
-						
-												
-						<div class="mb-3">
-							<label for="brand">Brand</label>
-							<select class="form-select" id="brand">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							</select>
-						</div>
-									
-						<div class="mb-3">
-							<label for="category">Category</label>
-							<select class="form-select" id="category">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							</select>
-						</div>
-						
-						<div class="mb-3">
-							<label for="sku_code">SKU Code</label>
-							<input type="text" class="form-control" id="sku_code" placeholder="SKU Code">
-						</div>
-
-						<div class="mb-3">
-							<label for="number_of_items">Number Of Items</label>
-							<input type="number" class="form-control" id="number_of_items" placeholder="No of items">
-						</div>
-
-						<div class="row">
-							<div class="col-12 text-right" style="text-align:right;">
-								<button type="button" class="btn btn-primary btn-pad">Save Product</button>
-								<button type="button" class="btn btn-danger btn-pad" data-bs-dismiss="offcanvas" >Cancel</button>
-							</div>
-						</div>
-					</form>                                       
+										
 	
                     </div><!--end offcanvas-body-->
                 </div>
@@ -521,7 +464,7 @@
 			validate.resetForm();
 		});
 		
-		
+	
 
 $(document).on('click','#btn_new_ticket',function()
 {
@@ -539,11 +482,29 @@ $(document).on('click','#btn_new_ticket',function()
 			}
 		});
 	
+});	
+
+
+$(document).on('click',"#btn_new_product",function()
+{
+
+	var Result=$("#new-product .offcanvas-body");
+		
+		jQuery.ajax({
+			type: "GET",
+			url: "{{url('add-product')}}",
+			dataType: 'html',
+			//data: {vid: vid},
+			success: function(res)
+			{
+			   Result.html(res);
+			}
+		});	
 });
-		
-		
+
+
 			
-	var validate=$('#createNewCustomer').validate({ 
+	var validate2=$('#createNewCustomer').validate({ 
 	
 		rules: {
             customer_name: {required: true,},
@@ -620,56 +581,6 @@ var validate=$('#createCustomer').validate({
 		});
 	  }
 	});	
-		
-		
-		
-           /* var options = {
-                chart: {
-                    height: 170,
-                    type: 'radialBar',
-                    toolbar: {
-                    show: false
-                    }
-                },
-                plotOptions: {
-                    radialBar: {
-                    hollow: {
-                        margin: 0,
-                        size: "70%",
-                        background: 'transparent',
-                    },
-                    
-                    dataLabels: {
-                        name: {
-                        offsetY: -5,
-                        fontSize: "13px",
-                        },
-                        value: {
-                        offsetY: 5,
-                        fontSize: "18px",
-                        show: true
-                        }
-                    }
-                    }
-                },
-                colors:['#2c74de'],
-                series: [75],
-                stroke: {
-                    lineCap: 'round'
-                },
-                labels: ['Leads Won'],
-
-            }
-
-            var chart = new ApexCharts(
-                document.querySelector("#apex_radialbar4"),
-                options
-            );
-
-            chart.render();
-			
-			*/
-
 			
 			
         </script>

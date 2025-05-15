@@ -43,6 +43,12 @@
                                     <i class="fas fa-donate font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
+							
+							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Products" data-bs-trigger="hover">
+                                <a href="#MenuProduct" id="invoice-tab" class="nav-link">
+                                    <i class="fab fa-product-hunt font-25 menu-icon"></i>
+                                </a><!--end nav-link-->
+                            </li><!--end nav-item-->
 
 							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Reports" data-bs-trigger="hover">
                                 <a href="#MenuReport" id="report-tab" class="nav-link">
@@ -143,7 +149,17 @@
                         </ul><!--end nav-->
                     </div><!-- end Pages -->
 					
-					
+					<div id="MenuProduct" class="main-icon-menu-pane tab-pane" role="tabpanel" aria-labelledby="invoice-tab">
+                        <div class="title-box">
+                            <h6 class="menu-title">Products</h6>
+                        </div>
+                        <ul class="nav flex-column mb-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('list-products')}}"><i class="fas fa-caret-right mr-2"></i>list Products</a>
+                            </li><!--end nav-item-->
+							
+                        </ul><!--end nav-->
+                    </div><!-- end Pages -->
 					
 					<div id="MenuReport" class="main-icon-menu-pane tab-pane" role="tabpanel" aria-labelledby="report-tab">
 

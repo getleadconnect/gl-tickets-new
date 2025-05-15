@@ -24,7 +24,11 @@ use DataTables;
 
 class DashboardController extends Controller
 {
-
+	public function __construct()
+	{
+		// code here
+	}
+	
 public function index()
 {
 	$cust_count=Customer::count();

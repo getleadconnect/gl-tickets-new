@@ -37,7 +37,12 @@ use DataTables;
 
 class AccountSettingsController extends Controller
 {
-		
+	
+	public function __construct()
+	{
+		// code here
+	}
+	
 	public function index(Request $request)
 	{
 		$user_id=User::getVendorId();

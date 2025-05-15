@@ -16,7 +16,7 @@
                                         <li class="breadcrumb-item active">Dashboard</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Dashboard</h4>
+                                <h4 class="page-title font-25">Dashboard</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                     </div>

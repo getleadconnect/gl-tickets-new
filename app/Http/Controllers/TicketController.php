@@ -36,7 +36,10 @@ use Auth;
 
 class TicketController extends Controller
 {
-
+	public function __construct()
+	{
+		// code here
+	}
 		
 	public function index(Request $request)
 	{

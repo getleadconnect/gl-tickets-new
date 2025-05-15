@@ -2691,6 +2691,7 @@ li.L9 {
   -webkit-box-shadow: 0 3px 12px rgba(214, 228, 241, 0.3);
   box-shadow: 0 3px 12px rgba(214, 228, 241, 0.3);
   margin: 0;
+  background-color:#e9efff;
 }
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:hover {
@@ -8310,4 +8311,9 @@ ul.steppedprogress li:first-child:after {
 .tooltip
 {
 	font-size:14px !important;
+}
+
+.dataTables_scrollBody
+{
+	min-height:200px !important;
 }

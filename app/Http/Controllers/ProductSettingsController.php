@@ -20,7 +20,11 @@ use Auth;
 use DataTables;
 
 class ProductSettingsController extends Controller
-{
+{	
+	public function __construct()
+	{
+		// code here
+	}
 		
 	public function index(Request $request)
 	{
@@ -152,6 +156,4 @@ class ProductSettingsController extends Controller
 			}
 	}
 
- 
- 
 }

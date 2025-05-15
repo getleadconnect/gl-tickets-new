@@ -63,6 +63,28 @@ class User extends Authenticatable
         ];
     }
 	
+	
+	public function isAdmin()
+    {
+        if (Auth::user()->role_id == Self::ADMIN) {
+            return true;
+        }
+    }
+	
+	public function isAgent()
+    {
+        if (Auth::user()->role_id == Self::AGENT) {
+            return true;
+        }
+    }
+	
+	public function isManager()
+    {
+        if (Auth::user()->role_id == Self::MANAGER) {
+            return true;
+        }
+    }
+	
 	public static function getVendorId()
     {
         if(auth()->check()){
