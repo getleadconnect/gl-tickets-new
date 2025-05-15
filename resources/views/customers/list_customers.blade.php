@@ -33,11 +33,10 @@ h5:hover{	background-color:#d6e7ff !important;}
 			<div class="page-title-box">
 				<div class="float-end">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Metrica</a>
+						<li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item"><a href="#">CRM</a>
+						<li class="breadcrumb-item active"><a href="#">Customers</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item active">Opportunities</li>
 					</ol>
 				</div>
 				<h4 class="page-title">Customers </h4>
@@ -53,7 +52,11 @@ h5:hover{	background-color:#d6e7ff !important;}
 
 				<div class="card">
 					<div class="card-body">    
-
+					@if($cust->isEmpty())
+						 <p style="color:#4e4ef7;text-align:center;" > Customers were not found..! </p>
+					@else
+					
+					<p style="color:blue;text-align:right;">*: Click on customer name to display details </p>
 					@foreach($cust as $key=>$row)
 
 					<div class="list-group custom-list-group mb-2 list-cust">
@@ -74,7 +77,7 @@ h5:hover{	background-color:#d6e7ff !important;}
 					<div class="mt-3 mb-5 d-flex"  style="width:100%;justify-content: center;align-items:center;font-size:1rem !impotant;">
 					{!! $cust->links('pagination::bootstrap-4') !!}
 					</div>				   
-
+					@endif
 					</div> <!--end card-body-->                            
 				</div><!--end card-->
 	

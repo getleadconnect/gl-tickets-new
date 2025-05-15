@@ -9,11 +9,10 @@
                             <div class="page-title-box">
                                 <div class="float-end">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Metrica</a>
+                                        <li class="breadcrumb-item"><a href="#">Home</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="#">Helpdesk</a>
+                                        <li class="breadcrumb-item"><a href="#">Dashboard</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Dashboard</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title font-25">Dashboard</h4>

@@ -39,11 +39,11 @@ a>h4{ color:#2b54cd !important;}
 			<div class="page-title-box">
 				<div class="float-end">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Metrica</a>
+						<li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item"><a href="#">CRM</a>
+						<li class="breadcrumb-item"><a href="{{url('list-customers')}}">Customers</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item active">Opportunities</li>
+						<li class="breadcrumb-item active">Details</li>
 					</ol>
 				</div>
 				<h4 class="m-0">Customer Details</h4>

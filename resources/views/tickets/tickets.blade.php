@@ -28,11 +28,10 @@ a>h4{ color:#2b54cd !important;}
 			<div class="page-title-box">
 				<div class="float-end">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Metrica</a>
+						<li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item"><a href="#">CRM</a>
+						<li class="breadcrumb-item active"><a href="#">Tickets</a>
 						</li><!--end nav-item-->
-						<li class="breadcrumb-item active">Opportunities</li>
 					</ol>
 				</div>
 				<h4 class="page-title">TICKETS</h4>
@@ -106,6 +105,13 @@ a>h4{ color:#2b54cd !important;}
 
 	<div class="row">
 		<div class="col-lg-12">
+					
+		@if($tickets->isEmpty())
+		  <p style="color:red;text-align:center;" > Tickets were not found..! </p>
+		@else
+		
+		<p style="color:blue;text-align:right;">*: Click on ticket id and issue to display details </p>	
+		
 		@foreach($tickets as $row)
 		 <div class="card">
 				<div class="card-body">
@@ -218,7 +224,7 @@ a>h4{ color:#2b54cd !important;}
 			</div><!--end card-->
 			
 			@endforeach
-			
+		@endif
 		</div><!--end col-->
 
 	</div><!--end row-->
@@ -388,6 +394,9 @@ $(document).on("change",".ticket_status",function()
 			{
 				toastr.success(result.msg);
 				$(this).val(result.data.status);
+				if(result.data.status==4){
+					setTimeout(function(){ window.location.reload();},1000);
+				}
 			}
 			else
 			{

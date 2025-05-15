@@ -27,11 +27,10 @@ a>h4{ color:#2b54cd !important;}
                             <div class="page-title-box">
                                 <div class="float-end">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Metrica</a>
+                                        <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="#">CRM</a>
+                                        <li class="breadcrumb-item"><a href="{{url('deleted-tickets')}}">Deleted Tickets</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Opportunities</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">DELETED TICKETS</h4>
@@ -91,6 +90,12 @@ a>h4{ color:#2b54cd !important;}
 
                     <div class="row">
                         <div class="col-lg-12">
+						
+						@if($tickets->isEmpty())
+						 <p style="color:red;text-align:center;" > Tickets were not found..! </p>
+						@endif
+						
+						
 						@foreach($tickets as $row)
 						 <div class="card">
                                 <div class="card-body">
