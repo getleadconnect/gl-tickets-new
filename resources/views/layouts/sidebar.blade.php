@@ -8,6 +8,8 @@
 	font-size:25px !important;
 }
 
+.main-icon-menu-pane:hever .
+
 </style>
 <div class="leftbar-tab-menu">
             <div class="main-icon-menu" style="background:#433653 !important;">
@@ -20,43 +22,43 @@
                     <div class="position-reletive h-100" data-simplebar style="overflow-x: hidden;">
                         <ul class="nav nav-tabs" role="tablist" id="tab-menu">
 							
-                            <li class="nav-item iconDash" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard" data-bs-trigger="hover">
+                            <li class="nav-item iconDash btnDashboard" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard" data-bs-trigger="hover">
                                 <a href="#MetricaDashboard" id="dashboard-tab" class="nav-link">
                                     <i class="fas fa-home font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 							
-							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Tickets" data-bs-trigger="hover">
+							<li class="nav-item menuIcon btnTickets" data-bs-toggle="tooltip" data-bs-placement="right" title="Tickets" data-bs-trigger="hover">
                                 <a href="#MetricaTickets" id="dashboard-tab" class="nav-link">
                                     <i class="far fa-newspaper font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 
-                            <li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Customers" data-bs-trigger="hover">
+                            <li class="nav-item menuIcon btnCustomers" data-bs-toggle="tooltip" data-bs-placement="right" title="Customers" data-bs-trigger="hover">
                                 <a href="#MetricaPages" id="pages-tab" class="nav-link">
                                     <i class="fas fa-user-friends font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 							
-							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Invoices" data-bs-trigger="hover">
+							<li class="nav-item menuIcon btnInvoices" data-bs-toggle="tooltip" data-bs-placement="right" title="Invoices" data-bs-trigger="hover">
                                 <a href="#MenuInvoice" id="invoice-tab" class="nav-link">
                                     <i class="fas fa-donate font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 							
-							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Products" data-bs-trigger="hover">
+							<li class="nav-item menuIcon btnProducts" data-bs-toggle="tooltip" data-bs-placement="right" title="Products" data-bs-trigger="hover">
                                 <a href="#MenuProduct" id="invoice-tab" class="nav-link">
                                     <i class="fas fa-box-open font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 
-							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Reports" data-bs-trigger="hover">
+							<li class="nav-item menuIcon btnReports" data-bs-toggle="tooltip" data-bs-placement="right" title="Reports" data-bs-trigger="hover">
                                 <a href="#MenuReport" id="report-tab" class="nav-link">
                                     <i class="fas fa-file-alt font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
                             </li><!--end nav-item-->
 							
-							<li class="nav-item menuIcon" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-trigger="hover">
+							<li class="nav-item menuIcon btnSettings" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-trigger="hover">
                                 <a href="#MenuSettings" id="settings-tab" class="nav-link">
                                     <i class="fas fa-cogs font-25 menu-icon"></i>
                                 </a><!--end nav-link-->
@@ -96,7 +98,7 @@
                         <ul class="nav flex-column mb-3 ">
 						
 							<li class="nav-item">
-                                <a class="nav-link" href="{{route('dashboard')}}"><i class="fas fa-caret-right mr-2"></i>Dashboard</a>
+                                <a class="nav-link" id="dash" href="{{route('dashboard')}}"><i class="fas fa-caret-right mr-2"></i>Dashboard</a>
                             </li><!--end nav-item-->
 
                         </ul><!--end nav-->
@@ -250,6 +252,9 @@
             </div><!-- end main-menu-inner-->
         </div>
 
+<script>
 
+
+</script>
 
 

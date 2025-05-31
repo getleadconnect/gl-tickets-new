@@ -337,74 +337,7 @@ return $addi_fields;
     } 
 
 
- public function createCustomer(Request $request)
-    {
-		
-		if($request->new_customer_tab=="modal")
-		{
-			$validator = Validator::make($request->all(), [
-				'tkt_customer_name' => 'required',
-				'tkt_country_code' => 'required',
-				'tkt_contact_number' => 'required',
-				'tkt_email' => 'required',
-				'tkt_company_name' => 'required',
-			]);
-		}
-		else
-		{
-			$validator = Validator::make($request->all(), [
-				'customer_name' => 'required',
-				'country_code' => 'required',
-				'contact_number' => 'required',
-				'email' => 'required',
-				'company_name' => 'required',
-			]);
-		}
-   
-        if($validator->fails())
-		{
-			return response()->json(['msg'=>$validator->errors()->first(),'status'=>false]);
-        }
-
-        //$userid=Auth::user()->id;
-		
-		$userid=1;
-		
-		if($request->new_customer_tab=="modal")
-		{
-			$data=[
-				'name' => $request->tkt_customer_name,
-				'country_code' =>$request->tkt_country_code,
-				'contact' => $request->tkt_contact_number,
-				'email' => $request->tkt_email,
-				'company_name' =>$request->tkt_company_name,
-				'created_by'=>$userid
-				];
-		}
-		else
-		{
-			$data=[
-				'name' => $request->customer_name,
-				'country_code' =>$request->country_code,
-				'contact' => $request->contact_number,
-				'email' => $request->email,
-				'company_name' =>$request->company_name,
-				'created_by'=>$userid
-				];
-		}
-		$cust=Customer::create($data);
-		
-		if($cust)
-		{
-			return response()->json(['data'=>$cust,'msg'=>'Customer successfully added','status'=>true]);
-		}
-		else
-		{
-			return response()->json(['data'=>[],'msg'=>'Something wrong, try again','status'=>false]);
-		}
-		
-    } 
-
+ 
 
 public function changeTicketPriority(Request $request)
 {

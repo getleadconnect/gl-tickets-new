@@ -63,7 +63,6 @@ class User extends Authenticatable
         ];
     }
 	
-	
 	public function isAdmin()
     {
         if (Auth::user()->role_id == Self::ADMIN) {

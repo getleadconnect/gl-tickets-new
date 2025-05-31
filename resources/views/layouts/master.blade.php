@@ -417,15 +417,49 @@
 			$("#iconDash").trigger('click');
 		});
 		
-		$(document).on('click','.menuIcon',function()
+		/*$(document).on('click','.menuIcon',function()
 		{
 			$("#MetricaDashboard").removeClass('active');
 			$("#MetricaDashboard").removeClass('show');
-		});
+		});*/
 		
 		//new Selectr("#assignedTo",{multiple:!0});
 		//new Selectr("#notifyTo",{multiple:!0});
-		
+
+	$(document).on('click',".btnDashboard",function()
+	{
+		location.href="{{route('dashboard')}}";
+	});
+	
+	$(document).on('click',".btnTickets",function()
+	{
+		location.href="{{route('list-tickets')}}";
+	});
+	
+	$(document).on('click',".btnCustomers",function()
+	{
+		location.href="{{route('list-customers')}}";
+	});
+	
+	$(document).on('click',".btnInvoices",function()
+	{
+		location.href="{{route('list-invoice')}}";
+	});
+	$(document).on('click',".btnProducts",function()
+	{
+		location.href="{{route('list-products')}}";
+	});
+	
+	$(document).on('click',".btnReports",function()
+	{
+		location.href="{{route('user-analytics')}}";
+	});
+	
+	$(document).on('click',".btnSettings",function()
+	{
+		location.href="{{route('profile')}}";
+	});
+	
 	
 		var phone_number1 = window.intlTelInput(document.querySelector("#contact_number"), {
 		  separateDialCode: true,
