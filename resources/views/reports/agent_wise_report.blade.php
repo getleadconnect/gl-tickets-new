@@ -199,7 +199,7 @@ $("#export_to_excel").click(function()
 	var lnk="{{url('export-agent-tickets/:sdate/:edate/:agent')}}";
 	var link=lnk.replace(":sdate",sdat).replace(":edate",edat).replace(":agent",agent);
 		
-	if(agent=="0")){
+	if(agent=="0"){
 		toastr.error("Please filter data...!");
 	}
 	else

@@ -125,7 +125,7 @@ class LoginController extends Controller
 			else
 			{
 				Session::flash('error','Invalid credentials. Try again');
-				return back();
+				return back()->withErrors(['msg'=>"Invalid credentials"]);
 			}			
 		
 		}

@@ -9441,7 +9441,8 @@ fieldset:disabled .btn {
 }
 .text-muted {
   --bs-text-opacity: 1;
-  color: #7081b9 !important;
+  /*color: #7081b9 !important;*/
+  color:#415bb1 !important;
 }
 .text-black-50 {
   --bs-text-opacity: 1;

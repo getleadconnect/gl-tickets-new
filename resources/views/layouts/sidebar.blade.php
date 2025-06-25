@@ -13,7 +13,7 @@
 </style>
 <div class="leftbar-tab-menu">
             <div class="main-icon-menu" style="background:#433653 !important;">
-                <a href="index.html" class="logo logo-metrica d-block text-center">
+                <a href="javascript:;" class="logo logo-metrica d-block text-center">
                     <span>
                         <img src="{{url('images/gl-logo.svg')}}" alt="logo-small" class="logo-sm">
                     </span>
@@ -69,7 +69,7 @@
                 </div><!--end main-icon-menu-body-->
                 <div class="pro-metrica-end">
                     <a href="" class="profile">
-                        <img src="{{url('assets/images/users/user-4.jpg')}}" alt="profile-user" class="rounded-circle thumb-sm">
+                       <!-- <img src="{{url('assets/images/users/user-4.jpg')}}" alt="profile-user" class="rounded-circle thumb-sm">-->
                     </a>
                 </div><!--end pro-metrica-end-->
             </div>
@@ -80,8 +80,8 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                         <span>
-                            <img src="{{url('images/logo-dark.png')}}" alt="logo-large" class="logo-lg logo-dark" style="height:25px;">
-                            <img src="{{url('images/logo-dark.png')}}" alt="logo-large" class="logo-lg logo-light" style="height:25px;">
+                            <img src="{{url('images/gl-icon.png')}}" alt="logo-large" class="logo-lg logo-dark" style="height:25px;">
+                            <img src="{{url('images/gl-icon.png')}}" alt="logo-large" class="logo-lg logo-light" style="height:25px;">
                         </span>
                     </a><!--end logo-->
                 </div><!--end topbar-left-->

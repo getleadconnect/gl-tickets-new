@@ -1,16 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
-class loginController extends Controller
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Api\BaseController as BaseController;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
+use Auth;
+use Validator;
+use App\Models\User;
+use App\Traits\GetAgents;
+use App\Traits\ConnectCrm;
+use App\Traits\InitiateLogin;
+use Carbon\Carbon;
+use App\Notification\SendOtpEmail;
+
+
+class LoginController extends BaseController
 {
     
 	public function __construct()
 	{
-		
 		
 	}
 	
@@ -34,18 +49,18 @@ class loginController extends Controller
 
 			$credentials = $request->only('email', 'password');
 			
-			$user = User::where('status', 1)
-				->where(function ($query) use ($credentials) {
+			$user = User::where('status', 1)->where(function ($query) use ($credentials)
+				{	
 					$query->where('email', $credentials['email']);
-				})
-				->first();
+				})->first();
 				
                 if ($user && Hash::check($request->password,$user->password)) 
                 {
 					
 					Auth::login($user);
                     $success['token'] =  $user->createToken('glTicketApp')->plainTextToken; 
-					$success['user'] =  $user;
+					//$success['user'] =  $user;
+					$success['user'] = $user->only(['id','name','email','phone','image','image_path','address','location']);
 										
                     return response()->json(['data'=>$success,'message' => 'Logged Successfully','status' => true]);  
                 }   
@@ -56,52 +71,11 @@ class loginController extends Controller
             }catch(\Exception $e){
                 return response()->json(['message' => $e->getMessage(), 'status' => false]);
             }
+			
         } else{
             return response()->json(['message' => $validator->messages(), 'status' => false]);
         }
 
-
-
-				
-			if ($user && Hash::check($credentials['password'], $user->password)) 
-			{
-				Auth::login($user);
-
-				//$user->datetime_last_login = Carbon::now();
-				//$rs=$user->save();
-
-				if ($user->status == User::ADMIN)
-				{
-					
-					if ($user->role_id == Variables::ADMIN) 
-					{
-						return redirect('dashboard');
-					}
-					else if($user->role_id == Variables::AGET)
-					{
-						 return redirect('aget_dashboard');
-					}
-					else if($user->role_id == Variables::MANAGER)
-					{
-						 return redirect('manager_dashboard');
-					}
-				}
-				else
-				{
-					Session::flash('error','Your account has been deactivated,Please contact your administrator');
-				}
-				
-			}
-			else
-			{
-				Session::flash('error','Invalid credentials. Try again');
-				return back();
-			}			
-		
 		}
-	
-	}
-		
-	}
 	
 }

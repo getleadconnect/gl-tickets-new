@@ -46,10 +46,15 @@
             
                                         <div class="form-group">
                                             <label class="form-label" for="userpassword">Password</label>                                            
-                                            <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">                            
+                                            <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
+
+											@if($errors->has('msg'))
+											    <label class="text-center" style="width:100%;color:red;">{{$errors->first('msg')}}</label>
+											@endif
+											
                                         </div><!--end form-group--> 
             
-                                        <div class="form-group row mt-3">
+                                        <div class="form-group row mt-2">
                                             <div class="col-sm-12 text-end">
                                                 <!--<a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>  -->
                                             </div><!--end col--> 
@@ -61,7 +66,10 @@
                                                     <button class="btn btn-primary" type="submit" style="line-height:30px;">Log In <i class="fas fa-sign-in-alt ms-1"></i></button>
                                                 </div>
                                             </div><!--end col--> 
-                                        </div> <!--end form-group-->                           
+                                        </div> <!--end form-group-->    
+
+
+										
                                     </form><!--end form-->
 
                                 </div><!--end card-body-->

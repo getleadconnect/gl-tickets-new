@@ -55,13 +55,17 @@ a>h4{ color:#2b54cd !important;}
 	
 					<div class="row align-items-center" style="background-color:#e6ebd3;">
 						<div class="col-12 d-flex gap">  
-						<div class="media mt-2">
+						<div class="media mt-2" style="width:20%">
 						<span class="badge bg-secondary font-30 mx-2" style="width:80px !important;height:80px !important;">{{substr($cust->name,0,1)}}</span>
 							<!--<span class="btn btn-info btn-icon-circle " style="width:50px !important;height:50px !important;"><h3>{{substr($cust->name,0,1)}}</h3></span>&nbsp;   -->
 							<div class="media-body align-self-center text-truncate">
 								<h4 class="m-0 text-dark">{{$cust->name}}</h4>
 								<ul class="p-0 list-inline mb-0">
-									<li class="list-inline-item">{{$cust->contact." | ".$cust->email}}</li>
+									<li class="list-inline-item"><i class="fa fa-phone"></i>  +{{$cust->country_code}}&nbsp;{{$cust->contact}}
+									@if($cust->email!="")
+									<br><i class="fa fa-envelope"></i> {{$cust->email}}
+									@endif
+								</li>
 								</ul>
 								
 							</div><!--end media-body-->

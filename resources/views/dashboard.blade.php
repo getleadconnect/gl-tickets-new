@@ -20,137 +20,101 @@
                         </div><!--end col-->
                     </div>
                     <!-- end page title end breadcrumb -->
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="card overflow-hidden">
-	
-                                <div class="row g-0">
-                                    <div class="col-md-2 col-lg-2 border-b border-e border-bo">
-                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col">
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="file-text" class="align-self-center text-muted icon-sm"></i>  
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#5c18dd !important;">Tickets</p>    
-															<!--<p class="mb-0 text-truncate text-muted"> text here </p>-->															
-                                                       </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$tk_count[0]->total}}</h4>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col--> 
-                                    <div class="col-md-2 col-lg-2 border-b border-e border-bo">
-	                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">                                                
-                                                <div class="col">
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="book-open" class="align-self-center text-muted icon-sm"></i>  
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#0f680f !important;">Open Tickets</p>                                                            
-                                                        </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$tk_count[0]->open}}</h4>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-											
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col-->                         
-                                    <div class="col-md-2 col-lg-2 border-b border-e">
-                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col">  
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="trending-up" class="align-self-center text-muted icon-sm"></i>
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#ff9f43 !important;">In Progress</p>                                                             
-                                                        </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$tk_count[0]->progress}}</h4>                                                     
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col--> 
-                                     <div class="col-md-2 col-lg-2 border-b border-e">
-                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col">  
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="check-square" class="align-self-center text-muted icon-sm"></i>
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#fd5931 !important;">Closed</p>                                                             
-                                                        </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$tk_count[0]->closed}}</h4>                                                     
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col--> 
-
-									 <div class="col-md-2 col-lg-2 border-b border-e">
-                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col">  
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="zap" class="align-self-center text-muted icon-sm"></i>
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#df11c4 !important;">Over Dues</p>                                                             
-                                                        </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$overdue}}</h4>                                                     
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col--> 
-									<div class="col-md-2 col-lg-2 border-b border-e">
-                                        <div class="card-body">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col">  
-                                                    <div class="media">
-                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
-                                                            <i data-feather="users" class="align-self-center text-muted icon-sm"></i>
-                                                        </div>
-                                                        <div class="media-body align-self-center ms-2"> 
-                                                            <p class="text-dark mb-1 fw-semibold" style="color:#2390e1 !important;">Customers</p>                                                             
-                                                        </div><!--end media body-->
-                                                    </div><!--end media-->                                                    
-                                                </div><!--end col-->
-                                                <div class="col-auto align-self-center">
-                                                    <h4 class="my-1">{{$cust_count}}</h4>                                                     
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end card-body-->                                            
-                                    </div> <!--end col-->
-
-                                </div><!--end row--> 
-								
-								
-                            </div><!--end card-->
-                        </div><!--end col-->           
-                    </div><!--end row-->
 					
 					
+					<div class="row">
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style="background: #f1c3c3;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$tk_count[0]->total}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">Tickets</h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto">
+										<i data-feather="file-text" class="align-self-center text-muted icon-sm"></i>
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style="background: #c7e6f5;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$tk_count[0]->open}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">Open Tickets </h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto position-reletive">
+                                            <i data-feather="book-open" class="align-self-center text-muted icon-sm"></i>  
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style="background: #d5f1d5;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$tk_count[0]->progress}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">In Progress</h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto">
+                                            <i data-feather="trending-up" class="align-self-center text-muted icon-sm"></i>
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style="background: #efc3ef;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$tk_count[0]->closed}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">Closed</h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto">
+                                            <i data-feather="check-square" class="align-self-center text-muted icon-sm"></i>
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style=" background: #9de1e1;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$overdue}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">Over Dues</h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto">
+                                            <i data-feather="zap" class="align-self-center text-muted icon-sm"></i>
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->
+                        <div class="col-12 col-md-4 col-lg-2"> 
+                            <div class="card overflow-hidden">                                
+                                <div class="card-body" style=" background: #ededbe;">
+                                    <div class="row align-items-center">
+                                        <div class="col">                                                                        
+                                            <span class="h4 fw-bold">{{$cust_count}}</span>      
+                                            <h6 class="text-uppercase text-muted mt-2 m-0 font-11">Customers</h6>                
+                                        </div><!--end col-->
+                                        <div class="col-auto">
+                                           <i data-feather="users" class="align-self-center text-muted icon-sm"></i>
+                                        </div><!--end col-->
+                                    </div> <!-- end row -->
+                                </div><!--end card-body-->                                                               
+                            </div> <!--end card-->                     
+                        </div><!--end col-->                    
+                    </div>
+
 					<div class="row">
 					<div class="col-lg-12 col-xl-8">
 					
